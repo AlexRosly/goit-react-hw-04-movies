@@ -9,8 +9,10 @@ import {
   Wrapper,
   Message,
 } from "./CastPage.styled";
+import defaultImage from "../../images/default.jpg";
 
 export const CastPage = ({ movies, reqStatus }) => {
+  const imgURL = `https://image.tmdb.org/t/p/w185`;
   return (
     <Container>
       {movies && (
@@ -18,7 +20,7 @@ export const CastPage = ({ movies, reqStatus }) => {
           {movies.map(({ id, name, profile_path, character }) => (
             <Item key={id}>
               <ImageCard
-                src={`https://image.tmdb.org/t/p/w185${profile_path}`}
+                src={profile_path ? `${imgURL}${profile_path}` : defaultImage}
                 alt={name}
               />
               <Wrapper>
@@ -34,6 +36,10 @@ export const CastPage = ({ movies, reqStatus }) => {
       )}
     </Container>
   );
+};
+
+CastPage.defaultProps = {
+  profile_path: defaultImage,
 };
 
 CastPage.propTypes = {

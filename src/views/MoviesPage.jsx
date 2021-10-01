@@ -7,8 +7,7 @@ import { toast } from "react-toastify";
 import { Loaders } from "../components/Loader/Loader";
 
 export default function MoviesPage() {
-  // const [searchQuery, setSearchQuery] = useState(null);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [movie, setMovie] = useState(null);
   const [reqStatus, setReqStatus] = useState("idle");
   const history = useHistory();

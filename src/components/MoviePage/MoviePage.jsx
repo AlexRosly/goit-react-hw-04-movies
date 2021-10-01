@@ -48,7 +48,6 @@ export const MoviePage = ({ movie }) => {
 
 MoviePage.defaultProps = {
   posterPath: defaultImage,
-  backdropPath: defaultImage,
 };
 
 MoviePage.propTypes = {

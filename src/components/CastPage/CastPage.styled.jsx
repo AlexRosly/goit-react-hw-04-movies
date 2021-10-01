@@ -27,6 +27,7 @@ export const Item = styled.li`
 
 export const ImageCard = styled.img`
   min-height: 175px;
+  max-width: 185px;
   object-fit: cover;
 `;
 

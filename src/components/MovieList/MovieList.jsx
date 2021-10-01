@@ -8,8 +8,8 @@ import {
   Image,
   Wrapper,
   Title,
-  Paragraf,
 } from "./MovieList.styled";
+import defaultImage from "../../images/default.jpg";
 
 export const MovieList = ({ movies }) => {
   const location = useLocation();
@@ -28,13 +28,12 @@ export const MovieList = ({ movies }) => {
                 }}
               >
                 <div>
-                  <Image src={`${imgURL}${poster_path}`} alt={title} />
+                  <Image
+                    src={poster_path ? `${imgURL}${poster_path}` : defaultImage}
+                    alt={title}
+                  />
                   <Wrapper>
                     <Title>{title}</Title>
-                    <Paragraf>
-                      {release_date.substring(0, 4)} |{" "}
-                      <span>{vote_average}</span>
-                    </Paragraf>
                   </Wrapper>
                 </div>
               </StyledLink>
